@@ -30,8 +30,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+//U01A1: Main activity extending the AppCompactActivity class
 public class MainActivity extends AppCompatActivity {
 
+    /*U01A1: text, button, textView variables for use throughout the mainActivity
+     * Overall var declaration section
+     */
     EditText etNum1;
     EditText etNum2;
 
@@ -58,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    /*U01A1: onCreate method that fires off upon launching the app
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,16 +80,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //U01A1: Adapter that returns a fragment; that is what the comment says at least.
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
+        //U01A1: viewpagers; need to review what these are
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         // find the elements
         setContentView(R.layout.fragment_main);
 
+        //U01A1:assigning text, button and textView variables to views by ID.
         etNum1 = (EditText) findViewById(R.id.etNum1);
         etNum2 = (EditText) findViewById(R.id.etNum2);
 
@@ -94,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
         tvResult = (TextView) findViewById(R.id.tvResult);
 
+        //U01A1: listeners for the for calculation methods
         // set listeners
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+    //U01A1: method that establishes what happens when what it is assigned to is interacted w/
    public void buttononClick(View v) {
        /**
         * Description: This method is the function that occurs when a user clicks one of the buttons in the simple calculator
@@ -170,6 +180,8 @@ public class MainActivity extends AppCompatActivity {
         // form the output line
         tvResult.setText(num1 + " " + oper + " " + num2 + " = " + result);
     }
+
+    //U01A1: method that adds items to the action bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -177,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    //U01A1: method that establishes actions taken when items in the action bar are interacted with
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -192,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //U01A1: some place holder fragment that brings up a view when called
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -227,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //U01A1: fragment used when an item is interacted with via click
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.

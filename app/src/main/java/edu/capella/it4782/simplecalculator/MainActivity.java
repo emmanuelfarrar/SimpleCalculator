@@ -1,9 +1,9 @@
 package edu.capella.it4782.simplecalculator;
+
 /**
- * Description: U01A2 - Added comments to the source code to identify parts of the code
- * and what I believe to be the purpose of it.
+ * Description: U02A2 - Debugging the code
  * Student: Emmanuel Farrar
- * Date: January 15, 2020
+ * Date: January 26, 2020
  */
 
 /**
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.btnAdd:
                 oper = "+";
-                result = num2 + num2;
+                result = num1 + num2; //U02A2: was num2 + num2
                 break;
             case R.id.btnSub:
                 oper = "-";
